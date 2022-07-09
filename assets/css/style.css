@@ -137,9 +137,12 @@ body {
     background-color: whitesmoke;
 
 
-
-
+.menu {
+color: skyblue; 
+    
 }
+
+
 
 #search-button {
     border: 1px solid black;
