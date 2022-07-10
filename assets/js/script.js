@@ -2,87 +2,126 @@
 // ************************************************************************************
 // ************************************************************************************
 //
+
 //Global Variable
 var teamSearch = $("#search-value").val();
-var savedSearches = [];
-var searchList = $(".history");
 
-// Local Storage for usuer input
-
-function saveSearch() {
-  localStorage.setItem("search-value", teamSearch);
-  console.log(saveSearch);
-}
-function renderPastSearchHistory() {
-  var lastSearch = localStorage.getItem("search-value");
-  console.log(lastSearch);
-}
 
 $("#search-button").on("click", function () {
-  teamSearch = $("#search-value").val();
-
-  getTeamOverview(teamSearch);
-  $("#search-value").val("");
+    teamSearch = $("#search-value").val();
+    getTeamOverview(teamSearch);
+    $("#search-value").val("");
 });
 
 $(".AllTeams").click(function () {
-  // clear old data and recall getTeamOverview function
-  $("#main-content").empty();
-  $(".card-top-main").empty();
-  getTeamOverview(teamSearch);
+    // clear old data and recall getTeamOverview function
+    $("#main-content").empty();
+    $(".card-top-main").empty();
+    getTeamOverview(teamSearch);
 });
 
-//Calls left cell of main container
-function getTeamOverview(teamSearch) {
-  // setup ajax livescore api parameters.
-  const searchTeamInfo = {
-    async: true,
-    crossDomain: true,
-    url: "https://api.squiggle.com.au/?q=teams" + ";" + teamSearch,
-    method: "GET",
-  };
+$(".CurrentLadder").click(function () {
 
-  $.ajax(searchTeamInfo).done(function (response) {
-    console.log(response);
-    // Clears all old content that may be present within the main content container
     $("#main-content").empty();
+    $(".card-top-main").empty();
+    getTeamStandings();
 
-    // Grabs team ID to use as the parameter for another AJAX call
-    var teamID = response.teams[0].id;
+})
 
-    // Stores the team logo url, the team name, country of origin, and founding date
-    var logo = response.teams[0].logo;
-    var name = response.teams[0].name;
-    var debut = response.teams[0].debut;
-    var abbrev = response.teams[0].abbrev;
+//Calls left cell of main container
+function getTeamStandings() {
 
-    // Dynamically Adds in the div containers and sections for the statistics api
+    const StandingInfo = {
+        async: true,
+        crossDomain: true,
+        url:
+            "https://api.squiggle.com.au/?q=standings",
+        method: "GET",
+    };
 
-    var bottomRightCard = $("<div>")
-      .addClass("card-section small-6 secM")
-      .attr("id", "bottom-right-card")
-      .appendTo($("#main-content"));
+    $.ajax(StandingInfo).done(function (response) {
+        //console.log(response)
+        // Clears all old content that may be present within the main content container
+        $("#main-content").empty();
 
-    // Lineup header appended to divR
-    var allTeams = $("<p style='font-size: 18px'>")
-      .addClass("Current Playing Teams 2022")
-      .text("Current Playing Teams 2022")
-      .appendTo($(".secM"));
+        // Dynamically Adds in the div containers and sections for the all-team search api
 
-    // object shortcut variable
-    var allTeams = response.teams;
-    console.log(allTeams);
-    // loops 18 times to get the 18 playing teams.
-    for (var i = 0; i <= 18; i++) {
-      var TeamName = allTeams[i].name;
-      var TeamDebut = allTeams[i].debut;
-      var TeamShortName = allTeams[i].abbrev;
-      var TeamInfoCol = $("<p style='font-size: 12px'>")
-        .addClass("lineup-col")
-        .text(TeamName + ", " + TeamDebut + ", " + TeamShortName + "")
-        .appendTo($(".secM"));
-    }
-  });
+        var RightCard = $("<div>")
+            .addClass("card-section small-6 secM")
+            .attr("id", "bottom-right-card")
+            .appendTo($("#main-content"));
+
+        var StandingTeams = $("<p style='font-size: 18px'>")
+            .addClass("Current Ladder for Playing Teams 2022")
+            .text("Current Ladder for Playing Teams 2022")
+            .appendTo($(".secM"));
+
+        // object shortcut variable
+        var currentStandings = response.standings;
+        console.log(currentStandings)
+
+        // loops 18 times to get the 18 playing teams.
+        for (var i = 0; i < 18; i++) {
+            var TeamName = 'Team Name :' + currentStandings[i].name + ' ';
+            var TeamRank = 'Rank :' + currentStandings[i].rank + ' ';
+            var wins = 'wins :' + currentStandings[i].wins + ' ';
+
+            var TeamSatndingCol = $("<p style='font-size: 12px'>")
+                .addClass("lineup-col")
+                .text(
+                    TeamName + "," + TeamRank + ", " + wins + " "
+                )
+                .appendTo($(".secM"));
+        }
+
+    });
+}
+
+// ************************************************************************************
+// ************************************************************************************
+// ************************************************************************************
+//
+function getTeamOverview(teamSearch) {
+    // setup ajax livescore api parameters.
+    const searchTeamInfo = {
+        async: true,
+        crossDomain: true,
+        url: "https://api.squiggle.com.au/?q=teams" + ";" + teamSearch,
+        method: "GET",
+    };
+
+    $.ajax(searchTeamInfo).done(function (response) {
+        console.log(response);
+        // Clears all old content that may be present within the main content container
+        $("#main-content").empty();
+
+        // Dynamically Adds in the div containers and sections for the All Teams api
+
+        var bottomRightCard = $("<div>")
+            .addClass("card-section small-6 secM")
+            .attr("id", "bottom-right-card")
+            .appendTo($("#main-content"));
+
+        // Lineup header appended to divR
+        var allTeams = $("<p style='font-size: 18px'>")
+            .addClass("Current Playing Teams 2022")
+            .text("Current Playing Teams 2022")
+            .appendTo($(".secM"));
+
+        // object shortcut variable
+        var allTeams = response.teams;
+        // console.log(allTeams);
+        // loops 18 times to get the 18 playing teams.
+        for (var i = 0; i < 18; i++) {
+            var TeamName = 'Team Name :' + allTeams[i].name + ' ';
+            var TeamDebut = 'Team Debut :' + allTeams[i].debut + ' ';
+            //var TeamShortName = ' :' + allTeams[i].abbrev + '';
+            var TeamInfoCol = $("<p style='font-size: 12px'>")
+                .addClass("lineup-col")
+                .text(TeamName + ", " + TeamDebut + " ")
+                .appendTo($(".secM"));
+        }
+    });
 }
 
 // ************************************************************************************
@@ -94,5 +133,5 @@ function getTeamOverview(teamSearch) {
 //below function is copied from google maps documents https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
 $(".venues").click(function () {
-  location.href = "maps.html";
+    location.href = "maps.html";
 });
