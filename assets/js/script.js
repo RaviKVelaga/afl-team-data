@@ -139,3 +139,6 @@ $(".venues").click(function () {
 $(".GreatHeroes").click(function () {
     location.href = "players.html";
 });
+$(".fixtures").click(function () {
+    location.href = "https://www.afl.com.au/fixture?Competition=1&CompSeason=43&MatchTimezone=MY_TIME&Regions=22&ShowBettingOdds=1&GameWeeks=17&Teams=1&Venues=13#byvenue";
+});
