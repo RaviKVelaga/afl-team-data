@@ -5,7 +5,11 @@ body {
     height: auto;
 }
 
-
+.fixtures {
+    text-align: center;
+    background-color: #3adb76;
+    padding :10px;
+}
 /* Top bar container - make sure when scrolling that top bar remains in front of all passing elements */
 .top-bar-container {
     z-index: 9999;
