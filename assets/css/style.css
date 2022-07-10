@@ -135,21 +135,11 @@ body {
 
 #page-container {
     background-color: whitesmoke;
+
+
+
+
 }
-
-
-.menu {
-color: skyblue; 
-display:flex;
-justify-content:space-between
-}
-button{
-    border:2px solid black;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-
 
 #search-button {
     border: 1px solid black;
