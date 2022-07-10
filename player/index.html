@@ -28,14 +28,21 @@
                     <div class="top-bar">
                         <div class="top-bar-left">
                             <ul class="menu">
+                                <li id="afl"><img src="./assets/players_img/AFLBackgroundImage.png"></li>
+                                
                                 <li><a href="index.html">AFL Footy</a></li>
-                                <li><button href="memebership.html">Join Us</a></li>
+                                <button> <a href="membership.html">Join Us</a></button>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <nav class="navbar">
+                <a class="success cell small-4 button AllTeams">ALL Teams</a>
+                <a class="success button cell small-4 videos-play" id="video-button">Current Ladder</a>
+                <a href="players.html" class="success button cell small-4 videos-play">Great Heroes</a>
+                <a class="success button cell small-4 venues">Venues</a>
+             </nav>
             <div class="grid-container fluid">
                 <div class="grid-x grid-margin-x">
                     <!-- search section -->
@@ -52,17 +59,17 @@
                         </div>
                     </div>
 
-
                     <!-- main content section -->
                     <div id="main-container" class="main-container cell small-7 small-cell-block-container">
                         <div class="button-selection grid-x">
-                            <a class="success cell small-4 button AllTeams">ALL Teams</a>
-                            <a class="success button cell small-4 CurrentLadder">Current Ladder</a>
-                            <a class="success button cell small-4 venues">Venues</a>
+                            
                         </div>
                         <div class="card-top-main"></div>
                         <div class="grid-x grid-padding-x" id="main-content">
                             <h3 class="opening-header">Welcome to the home of AFL Footy</h3>
+                            <div class="image"> 
+                                <img src="./assets/players_img/footy.jpg" alt="australian football">
+                            </div>
                             <p class="opening-paragraph">AFL Footy allows you to search for your favorite AFL football
                                 teams from
                                 Australia while providing statistics, lineups, upcoming matchups, recent
@@ -75,10 +82,12 @@
                     <div id="top-headlines" class="headlines-container cell small-3 small-cell-block-y">
                         <div class="card">
                             <div class="card-divider">
-                                <h5>AFL Headlines</h5>
+                                <p>Latest AFL Updated</p>
                             </div>
                             <div class="card-section">
-                                <ul class="headline-section"></ul>
+                                <ul class="headline-section">
+                                    <a href="https://www.afl.com.au/news/all-news">@AFL news</a>
+                                </ul>
                             </div>
                         </div>
                     </div>
