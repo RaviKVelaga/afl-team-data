@@ -5,7 +5,17 @@ body {
     height: auto;
 }
 
+#afl{
+    width:auto;
+    height: auto;
+}
 
+#afl img{
+    object-fit: scale-down;
+    width:50px;
+    height: 50px;
+
+}
 /* Top bar container - make sure when scrolling that top bar remains in front of all passing elements */
 .top-bar-container {
     z-index: 9999;
@@ -16,12 +26,41 @@ body {
     font-weight: 700;
 }
 
+nav{
+display:inline-flex;
+padding: 0px;
+}
+.button{
+    padding:5px;
+  border:1px solid grey 
+}
+.cell{
+    width:90%;
+}
+
+.opening-header {
+    padding-left: 70px;
+}
 /* Grid container and it's sections below */
 .grid-container {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+.card-divider, .headline-section{
+   padding-left: 60px;
+}
+.image{
+    padding-left: 20px;
+    }   
+.image img{
+    width:650px;
+    height:300px;
+    object-fit: cover;
+    object-position: center;
+}   
+.opening-paragraph{
+    text-align: center;
+}
 
 /* gives buttons borders */
 .AllTeams {
