@@ -129,31 +129,9 @@ function getTeamOverview(teamSearch) {
 // ************************************************************************************
 //
 
-var inputData = "melbourne";
+// click function to redirect to maps.html
+//below function is copied from google maps documents https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
 $(".venues").click(function () {
-    // clear old data and recall getTeamOverview function
-
-    console.log("testing");
-    fetchApi();
+    location.href = "maps.html";
 });
-
-//GoogleMaps fetch API
-function fetchApi() {
-    var requestUrl =
-        "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" +
-        inputData.value +
-        "&key=AIzaSyBfcesBR0jIfC2a5_y6_Y2Y9t3On2z39hU";
-    fetch(requestUrl, { mode: 'no-cors' })
-        .then(function (response) {
-            // After getting into the API this function will now happen (promise)
-            return response; // Returns the information as JSON
-        })
-        .then(function (
-            data // We take that data and use it inside this function to start outputting our information
-        ) {
-            console.log(data);
-            return data;
-        });
-}
-
