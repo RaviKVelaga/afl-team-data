@@ -21,7 +21,7 @@ $(".AllTeams").click(function () {
 });
 
 $(".CurrentLadder").click(function () {
-
+    // clear old data and call getTeamStandings function
     $("#main-content").empty();
     $(".card-top-main").empty();
     getTeamStandings();
@@ -134,4 +134,8 @@ function getTeamOverview(teamSearch) {
 
 $(".venues").click(function () {
     location.href = "maps.html";
+});
+
+$(".GreatHeroes").click(function () {
+    location.href = "players.html";
 });

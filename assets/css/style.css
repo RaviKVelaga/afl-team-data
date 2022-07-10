@@ -36,6 +36,10 @@ body {
     border: 0.5px solid black;
 }
 
+.GreatHeroes {
+    border: 0.5px solid black;
+}
+
 .team-name {
     display: block;
     margin-left: auto;
@@ -139,12 +143,13 @@ body {
 
 
 .menu {
-color: skyblue; 
-display:flex;
-justify-content:space-between
+    color: skyblue;
+    display: flex;
+    justify-content: space-between
 }
-button{
-    border:2px solid black;
+
+button {
+    border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
 }
