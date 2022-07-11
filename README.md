@@ -30,7 +30,7 @@ HTML
 # Mock-up
 
 My demo screen shots
-![Demo of Landing page](./Assets/images/AFL-1.png)
+![Demo of Landing page](./assets/images/AFL-1.png)
 
 #Features
 ## Current features
@@ -47,6 +47,8 @@ My demo screen shots
 * Deployed in git hub through my Github Account
 ## Git hub repo
 RaviKVelaga/afl-team-data
+## Link to github repo
+https://github.com/RaviKVelaga/afl-team-data
 ## Link to live site
 https://ravikvelaga.github.io/afl-team-data/
 
