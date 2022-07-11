@@ -66,7 +66,7 @@ I learned many important fundementals of javascript creating this project.  I us
 There were a few challenges I ran into making this password generator.  I had a hard time trying to figure out how to ensure the user input a password length between 8 and 128 characters as well as ensuring the user entered an integer.  By searching documentation and not giving up I was able to use if/else statements and isFinite and was able to overcome those challenges.
 
 ## Team
-* Ravi Velga
+* Ravi Velaga
 * Anurag Saini
 * Sudheer Kandula
 
