@@ -1,6 +1,8 @@
 # AFL-team-data
 AFL-team-data is an interactive website which help users to see all AFL teams playing in 2022. It also shows current ladder for 2022. It also incoaparates latest news regarding AFL. And users can click on Great Heros tab it directs to the legends of the game. Users can also search for stadiums by cicking search stadiums icon.
 
+## Project live site https://ravikvelaga.github.io/afl-team-data/
+
 ## UX
 This website is developed for AFL followers and also for people to know about this game.It is a very popular sport in Australia. There are very limited and restricted source of information on Australian footbal. And so we took up this project to provide necessary information and familiarize people about this sport,especially who are new to this country.
 
