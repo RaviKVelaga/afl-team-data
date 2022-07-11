@@ -46,6 +46,7 @@ My demo screen shots
 ## Git hub repo
 RaviKVelaga/afl-team-data
 ## Link to live site
+https://ravikvelaga.github.io/afl-team-data/
 
 ## Credits
 1. [MDN files] https://developer.mozilla.org/en-US/docs/Web/API
